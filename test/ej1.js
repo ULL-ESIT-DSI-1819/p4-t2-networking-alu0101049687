@@ -13,7 +13,8 @@ client = new LDJClient(stream);
 });
 
 it('should emit a message event from a single data event', done => { 
-    client.on('message', message => {
+    
+     client.on('message', message => {
         assert.deepEqual(message, {foo: 'bar'});
         done(); 
      });

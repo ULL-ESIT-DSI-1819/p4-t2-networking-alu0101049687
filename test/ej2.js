@@ -18,6 +18,5 @@ it('should throw an error when the constructor is null', done => {
       catch (error) {
         done();
       }
-
 });})
 
