@@ -12,7 +12,7 @@ const EventEmitter = require('events').EventEmitter;
 /**
  * @const {object} - LDJClient
  */
-const LDJClient = require('../lib/ejercicio.js/index.js');
+const LDJClient = require('../lib/ejercicio.js');
 
 /**
  * Describe function
