@@ -110,8 +110,14 @@ Se ejecuta con npm test. En la siguiente captura podemos observar su funcionamie
 Actualizamos [ldj-client-test.js](../master/test/lib/ldj-client-test.js) para que realize una prueba de Mocha.
 
 
+# Testability y Robustness
+Podemos encontrar los ejercicios en [la clase ldj-client modificada](../master/test/lib/ejercicio.js) y podemos comprobar el test en [el siguiente archivo.](../master/test/lib/ejercicio.js). 
 
+# Documentación
+La documentación se ecuentra en [la carpeta](../master/out/).
 
+# Travis 
+Podemos encontrar el archivo [travis](../master/.travis.yml) y podemos hallar la información [![Build Status](https://travis-ci.org/ULL-ESIT-DSI-1819/p4-t2-networking-alu0101049687.svg?branch=master)](https://travis-ci.org/ULL-ESIT-DSI-1819/p4-t2-networking-alu0101049687).
 
 
 
