@@ -46,9 +46,8 @@ describe('LDJClient', () => {
       assert.deepEqual(message, {foo: 'bar'});
       done();
     });
-    stream.emit('data', '{"foo":');
-    process.nextTick(() => stream.emit('data', '"bar'));
-    process.nextTick(() => stream.emit('data', '"}\n'));
+    stream.emit('data', '{"foo":"bar"');
+    stream.emit('data', '}\n');
   });
 
   //Testability 2
@@ -58,7 +57,7 @@ describe('LDJClient', () => {
         });
     done();
   });
-
+  
   //Robustness 2
   it ('should an error when the data event is not JSON', done =>{
     assert.throws(()=>{
