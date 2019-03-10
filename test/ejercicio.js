@@ -32,6 +32,11 @@ describe('LDJClient', () => {
     client = new LDJClient(stream);
   });
 
+  /** Test 1
+   *  @function it
+   * @param {string} nombre
+   * @param {function} test
+   */
   it('should emit a message event from a single data event', done => {
     client.on('message', message => {
       assert.deepEqual(message, {foo: 'bar'});
@@ -41,6 +46,11 @@ describe('LDJClient', () => {
   });
 
  //Testability 1
+ /** Test 2
+   * @function it
+   * @param {string} nombre
+   * @param {function} test
+   */
   it('should emit a message event from two or more data events', done => {
     client.on('message', message => {
       assert.deepEqual(message, {foo: 'bar'});
@@ -51,6 +61,11 @@ describe('LDJClient', () => {
   });
 
   //Testability 2
+  /** Test 3
+   * @function it
+   * @param {string} nombre
+   * @param {function} test
+   */
   it('should throw an error when the constructor is null', done => {
     assert.throws(()=>{
         new LDJClient(null);
@@ -59,6 +74,11 @@ describe('LDJClient', () => {
   });
   
   //Robustness 2
+  /** Test 4
+   * @function it
+   * @param {string} nombre
+   * @param {function} test
+   */
   it ('should an error when the data event is not JSON', done =>{
     assert.throws(()=>{
       stream.emit('data', '{"foo"\n');
@@ -66,7 +86,12 @@ describe('LDJClient', () => {
     done();
   })
 
-    //Robustness 4
+  //Robustness 4
+  /** Test 5
+   * @function it
+   * @param {string} nombre
+   * @param {function} test
+   */
   it ('the data event send no new line but a close event', done =>{
     client.on('message', message => {
       assert.deepEqual(message, {foo: 'bar'});
@@ -75,5 +100,6 @@ describe('LDJClient', () => {
     stream.emit('data', '{"foo": "bar"}');
     stream.emit('close');
   })
+
 
 });
