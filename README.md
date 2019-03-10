@@ -110,8 +110,15 @@ Se ejecuta con npm test. En la siguiente captura podemos observar su funcionamie
 Actualizamos [ldj-client-test.js](../master/test/lib/ldj-client-test.js) para que realize una prueba de Mocha.
 
 
-# Testability y Robustness
-Podemos encontrar los ejercicios en [la clase ldj-client modificada](../master/test/lib/ejercicio.js) y podemos comprobar el test en [el siguiente archivo.](../master/test/lib/ejercicio.js). 
+# Testability 
+Podemos encontrar los ejercicios en [la clase ldj-client modificada](../master/lib/ejercicio.js) y podemos comprobar el test en [el siguiente archivo.](../master/test/ejercicio.js). 
+Para resolver el ejercicio 1 se añade un test en [el siguiente archivo.](../master/test/ejercicio.js). Y además otro test en el que comprobamos que al ser un null lanza un error. Para ello en [la clase ldj-client modificada](../master/lib/ejercicio.js) se ha especificado que compruebe el contenido que se le pasa al constructor.
+
+
+# Robustness
+En el caso de que el contenido no sea de tipo JSON se ha añadido un test. 
+En el caso de qye se mande un contenido que no es de tipo JSON se producirá un error.
+Si se manda un dato sin pasarle el salto de línea, esto provocará que el mensaje quede incompleto. Por ello en el test se ha añadido un caso en el que no se le pasa un salto de línea pero sí un evento close. Al pasar eso, sabe que no acaba en salto de línea por lo que transmitirá la información sobrante del buffer. En ese último caso, el stream no es el único que emite el evento close sino el cliente LDJClient también para modificar que ha finalizado. 
 
 # Documentación
 La documentación se ecuentra en [la carpeta](../master/out/).
