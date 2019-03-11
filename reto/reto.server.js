@@ -21,7 +21,7 @@ connection.on('data', function(data) {
      for(let index = 0; index < arr.length; index++){
          if(index!=inde){
         const element = arr[index];
-        element.write('guest'+inde+' says: '+data);
+        element.write('guest'+(inde+1)+' says: '+data);
          }  
     }
 });
